@@ -1,7 +1,7 @@
 ﻿#include "Header.h"
-int* pop_back(int arr[], int& n)
+template <typename T>T* pop_back(T arr[], int& n)
 {
-	int* buffer = new int[--n]{};
+	T* buffer = new T[--n]{};
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
@@ -10,7 +10,7 @@ int* pop_back(int arr[], int& n)
 	return buffer;
 }
 
-int* pop_front(int arr[], int& n)
+template <typename T>T* pop_front(T arr[], int& n)
 {
 	int* buffer = new int[--n]{};
 	for (int i = 0; i < n; i++)
@@ -21,9 +21,9 @@ int* pop_front(int arr[], int& n)
 	return buffer;
 }
 
-void pop_row_back(int**& arr, int& m, int n) //Удаляет строку с конца двумерного динамического массива
+template <typename T>void pop_row_back(T**& arr, int& m, int n) //Удаляет строку с конца двумерного динамического массива
 {
-	int** buffer = new int* [--m]{};
+	T** buffer = new T* [--m]{};
 	Allocate(buffer, m, n);
 	for (int i = 0; i < m; i++)
 	{
@@ -36,9 +36,9 @@ void pop_row_back(int**& arr, int& m, int n) //Удаляет строку с к
 	arr = buffer;
 }
 
-void pop_row_front(int**& arr, int& m, int n)//Удаляет строку с начала двумерного динамического массива
+template <typename T>void pop_row_front(T**& arr, int& m, int n)//Удаляет строку с начала двумерного динамического массива
 {
-	int** buffer = new int* [--m]{};
+	T** buffer = new T* [--m]{};
 	Allocate(buffer, m, n);
 	for (int i = 0; i < m; i++)
 	{
@@ -51,9 +51,9 @@ void pop_row_front(int**& arr, int& m, int n)//Удаляет строку с н
 	arr = buffer;
 }
 
-void pop_col_back(int**& arr, int m, int& n)
+template <typename T>void pop_col_back(T**& arr, int m, int& n)
 {
-	int** buffer = new int* [m] {};
+	T** buffer = new T* [m] {};
 	Allocate(buffer, m, --n);
 
 	for (int i = 0; i < m; i++)
@@ -69,9 +69,9 @@ void pop_col_back(int**& arr, int m, int& n)
 }
 
 
-void pop_col_front(int**& arr, int m, int& n)  //Удаляет столбец в начале двумерного динамического массива
+template <typename T>void pop_col_front(T**& arr, int m, int& n)  //Удаляет столбец в начале двумерного динамического массива
 {
-	int** buffer = new int* [m] {};
+	T** buffer = new T* [m] {};
 	Allocate(buffer, m, --n);
 	for (int i = 0; i < m; i++)
 	{

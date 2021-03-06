@@ -1,5 +1,5 @@
 ﻿#include "Header.h"
-void Print(int arr[], int n)
+template <typename T>void Print(T arr[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -8,7 +8,7 @@ void Print(int arr[], int n)
 	cout << endl;
 }
 
-void Print(int** arr, const int m, const int n)
+template <typename T>void Print(T** arr, const int m, const int n)
 {
 	for (int i = 0; i < m; i++)
 	{

@@ -1,7 +1,7 @@
 ﻿#include "Header.h"
-int* erase(int arr[], int& n, int index)
+template <typename T>T* erase(T arr[], int& n, int index)
 {
-	int* buffer = new int[--n]{};
+	T* buffer = new T[--n]{};
 
 	for (int i = 0, j = 0; i < n; i++, j++)
 	{
@@ -15,9 +15,9 @@ int* erase(int arr[], int& n, int index)
 	return buffer;
 }
 
-void erase_row(int**& arr, int& m, int n, int index) //Удаляет строку по указанному индексу
+template <typename T>void erase_row(T**& arr, int& m, int n, int index) //Удаляет строку по указанному индексу
 {
-	int** buffer = new int* [--m]{};
+	T** buffer = new T* [--m]{};
 	Allocate(buffer, m, n);
 	for (int i = 0, offset = 0; i < m; i++)
 	{
@@ -35,9 +35,9 @@ void erase_row(int**& arr, int& m, int n, int index) //Удаляет строк
 }
 
 
-void erase_col(int**& arr, int m, int& n, int index)  //Удаляет столбец по указанному индексу
+template <typename T>void erase_col(T**& arr, int m, int& n, int index)  //Удаляет столбец по указанному индексу
 {
-	int** buffer = new int* [m] {};
+	T** buffer = new T* [m] {};
 	Allocate(buffer, m, --n);
 	for (int i = 0, offset = 0; i < m; i++, offset--)
 	{

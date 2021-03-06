@@ -1,9 +1,9 @@
 ﻿#include"Header.h"
-int* insert(int arr[], int& n, int index)
+template <typename T>T* insert(T arr[], int& n, int index)
 {
 	int value;
 	cout << "Введите добавляемое значение ";	cin >> value;
-	int* buffer = new int[++n]{};
+	T* buffer = new T[++n]{};
 
 	for (int i = 0, j = 0; i < n; i++, j++)
 	{
@@ -18,9 +18,9 @@ int* insert(int arr[], int& n, int index)
 	return buffer;
 }
 
-void insert_row(int**& arr, int& m, int n, int index)
+template <typename T>void insert_row(T**& arr, int& m, int n, int index)
 {
-	int** buffer = new int* [++m]{};
+	T** buffer = new T* [++m]{};
 	Allocate(buffer, m, n);
 
 	for (int i = 0, offset = 0; i < m; i++)
@@ -39,9 +39,9 @@ void insert_row(int**& arr, int& m, int n, int index)
 	arr = buffer;
 }
 
-void insert_col(int**& arr, int m, int& n, int index)
+template <typename T>void insert_col(T**& arr, int m, int& n, int index)
 {
-	int** buffer = new int* [m] {};
+	T** buffer = new T* [m] {};
 	Allocate(buffer, m, ++n);
 	for (int i = 0, offset = 0; i < m; i++, offset--)
 	{

@@ -1,10 +1,12 @@
 ﻿#include "Header.h"
-
-
-
-
-#define DYNAMIC_MEMORY_1
-//#define DYNAMIC_MEMORY_2
+#include "Allocate.cpp"
+#include "Clear.cpp"
+#include "erase.cpp"
+#include "FillRand.cpp"
+#include "insert.cpp"
+#include "pop.cpp"
+#include "Print.cpp"
+#include "push.cpp"
 
 
 
@@ -49,6 +51,7 @@ int main()
 	Print(arr, n);
 
 	delete[] arr;
+	cout << "Массив удален";
 #endif // DYNAMIC_MEMORY_1
 
 
@@ -61,13 +64,16 @@ int main()
 	cout << "Введите количество элементов в строке "; cin >> n;
 	///////////////////////////////////////////////////////////
 	//1)Создаем массив указателей:
-	// 
-	//char** arr = new char* [m];	
-	int** arr = new int* [m];
+	
+
+
+	double** arr = new double* [m];
+	//char** arr = new char* [m];
+	//int** arr = new int* [m];
 
 
 	//2)Выделяем память под строки двумерного масива:
-	cout << "arr" << endl;	
+	cout << "arr" << endl;
 	Allocate(arr, m, n);
 	FillRand(arr, m, n);
 	Print(arr, m, n);
@@ -75,7 +81,7 @@ int main()
 	//3)Удаление двумерного динамического массива:
 	//Clear(arr, m);
 
-	///////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////
 
 
 	//4)Добавляем строку в конец двумерного динамического массива
@@ -88,7 +94,7 @@ int main()
 	//5)Добавляем строку в начало двумерного динамического массива
 
 	cout << "push_row_front" << endl;
-	*arr = push_row_front(arr, m, n);
+	push_row_front(arr, m, n);
 	Print(arr, m, n);
 
 	cout << endl;

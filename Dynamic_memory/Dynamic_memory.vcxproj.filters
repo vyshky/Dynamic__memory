@@ -24,22 +24,22 @@
     <ClCompile Include="Print.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Clear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Allocate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Clear.cpp">
+    <ClCompile Include="push.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="erase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="insert.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="push.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

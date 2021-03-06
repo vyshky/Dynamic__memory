@@ -1,7 +1,7 @@
 ﻿#include "Header.h"
-int* push_back(int arr[], int& n, int value)
+template <typename T>T* push_back(T arr[], int& n, int value)
 {
-	int* buffer = new int[n + 1]{};
+	T* buffer = new T[n + 1]{};
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
@@ -13,9 +13,9 @@ int* push_back(int arr[], int& n, int value)
 	return arr;
 }
 
-int* push_front(int arr[], int& n, int value)
+template <typename T>T* push_front(T arr[], int& n, int value)
 {
-	int* buffer = new int[n + 1];
+	T* buffer = new T[n + 1];
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i + 1] = arr[i];
@@ -31,9 +31,9 @@ int* push_front(int arr[], int& n, int value)
 /// Двумерный динамический массив.Строки
 
 
-void push_row_back(int**& arr, int& m, int n)
+template <typename T>void push_row_back(T**& arr, int& m, int n)
 {
-	int** buffer = new int* [++m];
+	T** buffer = new T* [++m];
 	Allocate(buffer, m, n);
 
 	for (int i = 0; i < m - 1; i++)
@@ -49,9 +49,9 @@ void push_row_back(int**& arr, int& m, int n)
 	arr = buffer;
 }
 
-int* push_row_front(int**& arr, int& m, int n)
+template <typename T>void push_row_front(T**& arr, int& m, int n)
 {
-	int** buffer = new int* [++m];
+	T** buffer = new T* [++m];
 	Allocate(buffer, m, n);
 
 	for (int i = 0; i < m - 1; i++)
@@ -65,13 +65,13 @@ int* push_row_front(int**& arr, int& m, int n)
 	delete[] arr;
 	//Clear(arr, m - 1, n); //Можно использовать функцию Clear вместо delete
 	arr = buffer;
-	return *buffer;
+
 }
 
 
-void push_col_back(int**& arr, int m, int& n)
+template <typename T>void push_col_back(T**& arr, int m, int& n)
 {
-	int** buffer = new int* [m] {};
+	T** buffer = new T* [m] {};
 	Allocate(buffer, m, ++n);
 	for (int i = 0; i < m; i++)
 	{
@@ -81,13 +81,13 @@ void push_col_back(int**& arr, int m, int& n)
 		}
 		delete[] arr[i];
 	}
-	delete[] arr;	
+	delete[] arr;
 	arr = buffer;
 }
 
-void push_col_front(int**& arr, int m, int& n)
+template <typename T>void push_col_front(T**& arr, int m, int& n)
 {
-	int** buffer = new int* [m] {};
+	T** buffer = new T* [m] {};
 	Allocate(buffer, m, ++n);
 	for (int i = 0; i < m; i++)
 	{

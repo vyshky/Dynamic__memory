@@ -1,7 +1,7 @@
 ﻿#include"Header.h"
 
 //Удаление двумерного динамического массива:
-void Clear(int** arr, int m)
+template <typename T>void Clear(T** arr, int m)
 {
 	//1)Удаление строки:
 	for (int i = 0; i < m; i++)
